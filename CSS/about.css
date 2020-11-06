@@ -1,0 +1,275 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #111;
+  color: #fff;
+}
+
+.triangle {
+  fill: white;
+}
+
+#scroll {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 15px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: black;
+  cursor: pointer;
+  padding: 2px;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+.triangle:hover {
+  transition: 0.2s ease-in;
+  fill: rgb(31, 76, 154);
+}
+
+header {
+  position: static;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 40px 100px;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.5s;
+}
+
+header.sticky {
+  background-color: gray;
+  padding: 20px 100px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+  color: #fff;
+  font-size: 24px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+header.sticky .logo {
+  color: #fff;
+}
+
+header ul {
+  position: relative;
+  display: flex;
+}
+
+header ul li {
+  position: relative;
+  list-style: none;
+}
+
+header ul li a {
+  position: relative;
+  display: inline-block;
+  margin: 0 15px;
+  color: #fff;
+  text-decoration: none;
+}
+
+header.sticky ul li a {
+  color: #fff;
+}
+header.sticky ul li a:hover {
+  border-bottom: 1px solid black;
+}
+header ul li a:hover {
+  border-bottom: 1px solid #fff;
+}
+
+header ul li a,
+header .logo {
+  color: #fff;
+  font-size: 24px;
+}
+
+footer {
+  text-align: center;
+}
+
+.heading {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+.heading h2 {
+  font-weight: 600;
+  font-size: 30px;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.work .content {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.work .content .workBox {
+  max-width: 50%;
+  padding: 0px;
+  margin: 0px;
+  position: relative;
+}
+.work .content .workBox img {
+  width: 100%;
+}
+
+p span {
+  font-weight: 700;
+}
+.items {
+  text-align: center;
+  display: flex;
+  flex-flow: row;
+  align-self: flex-start;
+  justify-content: center;
+  width: 100%;
+}
+
+main ul {
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-end;
+  list-style-type: none;
+  margin: 0px;
+  padding: 0;
+  overflow: hidden;
+  font-size: 24px;
+}
+
+main ul li {
+  display: list-item;
+  list-style: none;
+  padding: 10px;
+  margin: 0 1px;
+}
+
+main li a {
+  min-width: 100px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  color: white;
+  font-weight: inherit;
+  text-decoration: none;
+}
+
+main li:hover a {
+  transition: 0.3s;
+  color: rgb(31, 76, 154);
+  text-decoration: underline;
+}
+
+#menu section.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+#menu section:not(.active) {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+#menu section {
+  transition: opacity 2s, transform 1s;
+}
+#content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#bio {
+  position: absolute;
+  top: 100%;
+}
+
+#cv {
+  position: absolute;
+  top: 100%;
+}
+
+footer {
+  position: relative;
+}
+footer p {
+  position: absolute;
+  bottom: -500px;
+  text-align: center;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#myCV {
+  text-decoration: underline;
+}
+
+/* Responsiveness */
+
+@media (max-width: 991px) {
+  header,
+  header.sticky {
+    padding: 20px 20px;
+    z-index: 1000;
+  }
+
+  header ul li a,
+  header .logo {
+    color: white;
+    font-size: 20px;
+    margin: 10px;
+  }
+  .work .content .workBox {
+    max-width: 50%;
+    padding: 20px;
+    margin: 20px;
+    position: relative;
+  }
+  footer p {
+    bottom: -700px;
+  }
+}
+
+@media (max-width: 600px) {
+  header,
+  header.sticky {
+    padding: 20px 20px;
+  }
+  .heading h2 {
+    margin-top: 0%;
+    font-weight: 400;
+  }
+
+  .work .content .workBox {
+    max-width: 70%;
+  }
+  footer p {
+    bottom: -900px;
+  }
+}
